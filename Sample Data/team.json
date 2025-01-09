@@ -1,0 +1,20 @@
+[
+    {
+      "name": "India",
+      "coach": "Ravi Shastri",
+      "players": [],
+      "achievements": ["ICC Champions Trophy 2013", "ICC T20 World Cup 2007", "ICC Cricket World Cup 1983, 2011"]
+    },
+    {
+      "name": "Australia",
+      "coach": "Justin Langer",
+      "players": [],
+      "achievements": ["5-time ICC Cricket World Cup Champions", "ICC T20 World Cup 2021"]
+    },
+    {
+      "name": "England",
+      "coach": "Chris Silverwood",
+      "players": [],
+      "achievements": ["ICC Cricket World Cup 2019", "ICC T20 World Cup 2010"]
+    }
+  ]

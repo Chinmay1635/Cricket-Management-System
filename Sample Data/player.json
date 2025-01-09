@@ -1,0 +1,80 @@
+[
+    {
+      "name": "Virat Kohli",
+      "role": "Batsman",
+      "team": "India",
+      "stats": {
+        "matches": 95,
+        "runs": 12000,
+        "wickets": 0,
+        "catches": 50,
+        "strikeRate": 130.41,
+        "economy": 0
+      }
+    },
+    {
+      "name": "Rohit Sharma",
+      "role": "Batsman",
+      "team": "India",
+      "stats": {
+        "matches": 60,
+        "runs": 8500,
+        "wickets": 0,
+        "catches": 60,
+        "strikeRate": 140.5,
+        "economy": 0
+      }
+    },
+    {
+      "name": "Steve Smith",
+      "role": "Batsman",
+      "team": "Australia",
+      "stats": {
+        "matches": 85,
+        "runs": 8200,
+        "wickets": 0,
+        "catches": 40,
+        "strikeRate": 120.6,
+        "economy": 0
+      }
+    },
+    {
+      "name": "David Warner",
+      "role": "Batsman",
+      "team": "Australia",
+      "stats": {
+        "matches": 120,
+        "runs": 11000,
+        "wickets": 0,
+        "catches": 80,
+        "strikeRate": 145.6,
+        "economy": 0
+      }
+    },
+    {
+      "name": "Joe Root",
+      "role": "Batsman",
+      "team": "England",
+      "stats": {
+        "matches": 75,
+        "runs": 6500,
+        "wickets": 0,
+        "catches": 50,
+        "strikeRate": 110.3,
+        "economy": 0
+      }
+    },
+    {
+      "name": "Ben Stokes",
+      "role": "All-Rounder",
+      "team": "England",
+      "stats": {
+        "matches": 85,
+        "runs": 4500,
+        "wickets": 200,
+        "catches": 40,
+        "strikeRate": 130.2,
+        "economy": 6.5
+      }
+    }
+  ]

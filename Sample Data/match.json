@@ -1,0 +1,65 @@
+[
+    {
+      "teams": ["India", "Australia"],
+      "scores": [
+        {
+          "team": "India",
+          "runs": 300,
+          "wicketsLost": 6,
+          "overs": 50
+        },
+        {
+          "team": "Australia",
+          "runs": 280,
+          "wicketsLost": 8,
+          "overs": 50
+        }
+      ],
+      "result": {
+        "winner": "India",
+        "margin": "20 runs"
+      }
+    },
+    {
+      "teams": ["England", "Australia"],
+      "scores": [
+        {
+          "team": "England",
+          "runs": 350,
+          "wicketsLost": 7,
+          "overs": 50
+        },
+        {
+          "team": "Australia",
+          "runs": 320,
+          "wicketsLost": 9,
+          "overs": 50
+        }
+      ],
+      "result": {
+        "winner": "England",
+        "margin": "30 runs"
+      }
+    },
+    {
+      "teams": ["India", "England"],
+      "scores": [
+        {
+          "team": "India",
+          "runs": 270,
+          "wicketsLost": 7,
+          "overs": 50
+        },
+        {
+          "team": "England",
+          "runs": 260,
+          "wicketsLost": 8,
+          "overs": 50
+        }
+      ],
+      "result": {
+        "winner": "India",
+        "margin": "10 runs"
+      }
+    }
+  ]
