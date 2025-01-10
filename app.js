@@ -22,7 +22,7 @@ const teamSchema = new mongoose.Schema({
      type: mongoose.Schema.Types.ObjectId,
     ref: 'Player' 
   }],
-  achievements: [String],
+  achievements: String,
 });
 const Team = mongoose.model('Team', teamSchema);
 
@@ -53,28 +53,20 @@ const Player = mongoose.model('Player', playerSchema);
 
 // Match Schema and Model
 const matchSchema = new mongoose.Schema({
-  teams: [{ 
-    type: mongoose.Schema.Types.ObjectId, 
-    ref: 'Team'
-   }],
+  teams: [String],
   scores: [
     {
-      team: { 
-        type: mongoose.Schema.Types.ObjectId,
-         ref: 'Team' 
-        },
+      team: String, 
       runs: Number,
       wicketsLost: Number,
-      overs: Number,
-    },
+      overs: Number
+    }
   ],
+
   result: {
-    winner: { 
-      type: mongoose.Schema.Types.ObjectId, 
-      ref: 'Team' 
-    },
-    margin: String,
-  },
+    winner: String,
+    margin: String
+  }
 });
 const Match = mongoose.model('Match', matchSchema);
 
@@ -165,43 +157,10 @@ app.delete('/players/:name', async (req, res) => {
 app.post('/matches', async (req, res) => {
   const { teams, date, location, scores, result } = req.body;
 
-  // Find teams by their names
-  const teamDocs = await Team.find({ name: { $in: teams } });
-  if (teamDocs.length !== teams.length) {
-    res.status(404).json({ message: 'One or more teams not found' });
-    return;
-  }
-
-  // Map team names to their ObjectId
-  const teamIdMap = Object.fromEntries(teamDocs.map((team) => [team.name, team._id]));
-
-  // Validate scores against team names
-  for (const score of scores) {
-    if (!teamIdMap[score.team]) {
-      res.status(400).json({ message: `Invalid team name in scores: ${score.team}` });
-      return;
-    }
-  }
-
-  // Validate the winner against team names
-  if (!teamIdMap[result.winner]) {
-    res.status(400).json({ message: `Invalid winner team name: ${result.winner}` });
-    return;
-  }
-
-  // Create the match
   const match = new Match({
-    teams: teamDocs.map((team) => team._id),
-    scores: scores.map((score) => ({
-      team: teamIdMap[score.team],
-      runs: score.runs,
-      wicketsLost: score.wicketsLost,
-      overs: score.overs,
-    })),
-    result: {
-      winner: teamIdMap[result.winner],
-      margin: result.margin,
-    },
+    teams,
+    scores,
+    result
   });
 
   await match.save();
@@ -209,7 +168,7 @@ app.post('/matches', async (req, res) => {
 });
 
 app.get('/matches', async (req, res) => {
-  const matches = await Match.find().populate('teams scores.team result.winner');
+  const matches = await Match.find();
   res.json(matches);
 });
 
